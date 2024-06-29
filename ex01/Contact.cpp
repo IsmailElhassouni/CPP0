@@ -2,17 +2,35 @@
 #include "iomanip"
 void Contact::setValues(int i)
 {
-    is=i;
+    while (FirstName.empty())
+    {
+        is=i;
     std::cout<< "First Name: ";
     getline(std::cin,FirstName);
-    std::cout<< "LastName: ";
+    }
+    while (LastName.empty())
+    {
+    std::cout<< "Last Name: ";
     getline(std::cin,LastName);
-    std::cout<< "NickName: ";
+    }
+    while (NickName.empty())
+    {
+    std::cout<< "Nick Name: ";
     getline(std::cin,NickName);
-    std::cout<< "PhoneNumber: ";
+    }
+    while (Darksecret.empty())
+    {
+    std::cout<< "Dark Secret: ";
     getline(std::cin,Darksecret);
-    std::cout<< "Darksecret: ";
-    getline(std::cin,Darksecret);
+    }
+    // std::cout<< "LastName: ";
+    // getline(std::cin,LastName);
+    // std::cout<< "NickName: ";
+    // getline(std::cin,NickName);
+    // std::cout<< "PhoneNumber: ";
+    // getline(std::cin,Darksecret);
+    // std::cout<< "Darksecret: ";
+    // getline(std::cin,Darksecret);
 
 }
 std::string println(std::string str)
