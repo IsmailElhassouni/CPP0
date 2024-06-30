@@ -11,7 +11,6 @@ void Phonebook::getValues(int i)
     << "|"<<std::setw(10)<< "FirstName"
     << "|" << std::setw(10)<<"LastName"
     << "|" << std::setw(10)<<"NickName"
-    << "|" << std::setw(10)<<"Darksecret"
     << std::endl;
     for(int k =0; k < i;k++)
         fields[k].getValues();
@@ -25,7 +24,7 @@ void Phonebook::lookfor()
     if(std::cin.eof())
         exit(1);
     index = atoi(str.c_str());
-    if(index < 0 || index > 7 || !isdigit(str[0]))
+    if(index < 0 || index > 7 || !isdigit(str[0]) || str.size()>1 )
     {
         std::cout << "Invalid index\n";
         return;
