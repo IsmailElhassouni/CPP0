@@ -8,35 +8,35 @@ void Contact::setValues(int i)
     std::cout<< "First Name: \n";
     getline(std::cin,FirstName);
         if(std::cin.eof())
-            exit(1);
+            std::exit(1);
     }
     while (LastName.empty())
     {
     std::cout<< "Last Name: \n";
     getline(std::cin,LastName);
         if(std::cin.eof())
-            exit(1);
+            std::exit(1);
     }
     while (NickName.empty())
     {
     std::cout<< "Nick Name: \n";
     getline(std::cin,NickName);
         if(std::cin.eof())
-            exit(1);
+            std::exit(1);
     }
     while(PhoneNumber.empty())
     {
         std::cout << "Phone number: \n";
         getline(std::cin,PhoneNumber);
         if(std::cin.eof())
-            exit(1);
+            std::exit(1);
     }
     while (Darksecret.empty())
     {
     std::cout<< "Dark Secret: \n";
     getline(std::cin,Darksecret);
         if(std::cin.eof())
-            exit(1);
+            std::exit(1);
     }
     // std::cout<< "LastName: ";
     // getline(std::cin,LastName);

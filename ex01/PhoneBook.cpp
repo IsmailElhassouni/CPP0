@@ -1,6 +1,6 @@
 #include"PhoneBook.hpp"
-#include<ctype.h>
-#include"stdio.h"
+#include<cctype>
+#include <cstdlib>
 void Phonebook::setValues(int i)
 {
     fields[i].setValues(i);
@@ -22,9 +22,9 @@ void Phonebook::lookfor()
     std::cout << "Enter index: ";
     std::getline(std::cin, str);
     if(std::cin.eof())
-        exit(1);
-    index = atoi(str.c_str());
-    if(index < 0 || index > 7 || !isdigit(str[0]) || str.size()>1 )
+        std::exit(1);
+    index = std::atoi(str.c_str());
+    if(index < 0 || index > 7 || !std::isdigit(str[0]) || str.size()>1 )
     {
         std::cout << "Invalid index\n";
         return;
