@@ -1,5 +1,17 @@
 #include "Contact.hpp"
 #include "iomanip"
+static int ispr(std::string str)
+{
+    for(int i =0;str[i];i++)
+        {
+            if(!std::isprint(str[i]))
+            {
+                std::cout<<"i dont take non printable chars\n";
+                return 0;
+            }
+        }
+        return 1;
+}
 void Contact::setValues(int i)
 {
     while (FirstName.empty())
@@ -9,6 +21,8 @@ void Contact::setValues(int i)
     getline(std::cin,FirstName);
         if(std::cin.eof())
             std::exit(1);
+        if(ispr(FirstName) == 0)
+            FirstName="";
     }
     while (LastName.empty())
     {
@@ -16,6 +30,8 @@ void Contact::setValues(int i)
     getline(std::cin,LastName);
         if(std::cin.eof())
             std::exit(1);
+        if(ispr(LastName) == 0)
+           LastName="";
     }
     while (NickName.empty())
     {
@@ -23,6 +39,8 @@ void Contact::setValues(int i)
     getline(std::cin,NickName);
         if(std::cin.eof())
             std::exit(1);
+        if(ispr(NickName) == 0)
+            NickName="";
     }
     while(PhoneNumber.empty())
     {
@@ -30,6 +48,8 @@ void Contact::setValues(int i)
         getline(std::cin,PhoneNumber);
         if(std::cin.eof())
             std::exit(1);
+        if(ispr(PhoneNumber) == 0)
+            PhoneNumber="";
     }
     while (Darksecret.empty())
     {
@@ -37,6 +57,8 @@ void Contact::setValues(int i)
     getline(std::cin,Darksecret);
         if(std::cin.eof())
             std::exit(1);
+        if(ispr(Darksecret) == 0)
+           Darksecret ="";
     }
     // std::cout<< "LastName: ";
     // getline(std::cin,LastName);

@@ -2,6 +2,7 @@
 #define CONTACT_HPP
 #include <iostream>
 #include <cstdlib>
+#include  <cctype>
 class Contact
 {
         std::string FirstName;

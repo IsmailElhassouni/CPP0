@@ -19,7 +19,7 @@ void Phonebook::lookfor()
 {
     int index;
     std::string str;
-    std::cout << "Enter index: ";
+    std::cout << "Enter index: \n";
     std::getline(std::cin, str);
     if(std::cin.eof())
         std::exit(1);
