@@ -7,21 +7,36 @@ void Contact::setValues(int i)
         is=i;
     std::cout<< "First Name: ";
     getline(std::cin,FirstName);
+        if(std::cin.eof())
+            exit(1);
     }
     while (LastName.empty())
     {
     std::cout<< "Last Name: ";
     getline(std::cin,LastName);
+        if(std::cin.eof())
+            exit(1);
     }
     while (NickName.empty())
     {
     std::cout<< "Nick Name: ";
     getline(std::cin,NickName);
+        if(std::cin.eof())
+            exit(1);
+    }
+    while(PhoneNumber.empty())
+    {
+        std::cout << "Phone number: ";
+        getline(std::cin,PhoneNumber);
+        if(std::cin.eof())
+            exit(1);
     }
     while (Darksecret.empty())
     {
     std::cout<< "Dark Secret: ";
     getline(std::cin,Darksecret);
+        if(std::cin.eof())
+            exit(1);
     }
     // std::cout<< "LastName: ";
     // getline(std::cin,LastName);
@@ -33,7 +48,7 @@ void Contact::setValues(int i)
     // getline(std::cin,Darksecret);
 
 }
-std::string println(std::string str)
+static std::string println(std::string str)
 {
     if(str.length() > 10)
     {
@@ -56,7 +71,20 @@ void Contact::getValues()
     << "|" << std::setw(10)<<println(LastName)
     << "|" << std::setw(10)<<println(NickName)
     << "|" << std::setw(10)<<println(Darksecret)
-    << std::endl;
+    << "\n";
+}
+void Contact::values()
+{
+    if(FirstName.empty())
+    {
+        std::cout<<"empty slot\n";
+        return;
+    }
+    std::cout<<"First Name\t"<<FirstName
+    <<"\nLastName\t"<<LastName
+    <<"\nNickName\t"<<NickName
+    <<"\nDarksecret\t"<<Darksecret
+    <<"\n";
 }
 // int main()
 // {
