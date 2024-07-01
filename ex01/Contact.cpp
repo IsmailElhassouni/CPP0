@@ -14,17 +14,20 @@ static int ispr(std::string str)
 }
 void Contact::setValues(int i)
 {
-    while (FirstName.empty())
+    while(1)
     {
         is=i;
     std::cout<< "First Name: \n";
     getline(std::cin,FirstName);
         if(std::cin.eof())
             std::exit(1);
+        
         if(ispr(FirstName) == 0)
             FirstName="";
+        if(!FirstName.empty())
+            break;
     }
-    while (LastName.empty())
+    while(1)
     {
     std::cout<< "Last Name: \n";
     getline(std::cin,LastName);
@@ -32,8 +35,10 @@ void Contact::setValues(int i)
             std::exit(1);
         if(ispr(LastName) == 0)
            LastName="";
+        if(!LastName.empty())
+            break;
     }
-    while (NickName.empty())
+    while(1)
     {
     std::cout<< "Nick Name: \n";
     getline(std::cin,NickName);
@@ -41,8 +46,10 @@ void Contact::setValues(int i)
             std::exit(1);
         if(ispr(NickName) == 0)
             NickName="";
+        if(!NickName.empty())
+            break;
     }
-    while(PhoneNumber.empty())
+    while(1)
     {
         std::cout << "Phone number: \n";
         getline(std::cin,PhoneNumber);
@@ -50,8 +57,10 @@ void Contact::setValues(int i)
             std::exit(1);
         if(ispr(PhoneNumber) == 0)
             PhoneNumber="";
+        if(!PhoneNumber.empty())
+            break;
     }
-    while (Darksecret.empty())
+    while(1)
     {
     std::cout<< "Dark Secret: \n";
     getline(std::cin,Darksecret);
@@ -59,6 +68,8 @@ void Contact::setValues(int i)
             std::exit(1);
         if(ispr(Darksecret) == 0)
            Darksecret ="";
+        if(!Darksecret.empty())
+            break;
     }
     // std::cout<< "LastName: ";
     // getline(std::cin,LastName);
